@@ -1,14 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://bl6cyvuysewfo"]
+[gd_scene load_steps=21 format=3 uid="uid://bl6cyvuysewfo"]
 
 [ext_resource type="PackedScene" uid="uid://dgpjxoygnvyy4" path="res://assets/simple_fpsplayer/Player.tscn" id="1_8etef"]
+[ext_resource type="Script" path="res://MainScene.gd" id="1_b25ig"]
+[ext_resource type="PackedScene" uid="uid://pqxaeubbyd1f" path="res://inventory/item/pick_up.tscn" id="2_43tgc"]
 [ext_resource type="PackedScene" uid="uid://b0aavylmm8lkm" path="res://3D models/MainRoom/room_prototype.tscn" id="2_ca1er"]
 [ext_resource type="PackedScene" uid="uid://b7e2qyits6cm7" path="res://3D models/keypad/Keypa.tscn" id="3_grcd0"]
-[ext_resource type="PackedScene" uid="uid://bsys3d3ay5d5b" path="res://3D models/key/key.tscn" id="4_181if"]
+[ext_resource type="Resource" uid="uid://cpxn5cqryvnkt" path="res://3D models/key/Key.tres" id="5_5o2br"]
+[ext_resource type="PackedScene" uid="uid://d108xt76uvefx" path="res://inventory/inventory.tscn" id="5_gwghl"]
+[ext_resource type="Script" path="res://inventory/Inventory_Interface.gd" id="6_b0e5n"]
+[ext_resource type="Script" path="res://inventory/slot_data.gd" id="6_lwdl8"]
+[ext_resource type="PackedScene" uid="uid://b7t254g1xu2ab" path="res://inventory/slot.tscn" id="8_qixa7"]
+[ext_resource type="Script" path="res://door.gd" id="11_3v2bi"]
+[ext_resource type="PackedScene" uid="uid://cfdwjqnf3or0h" path="res://inventory/item/pick_up_note.tscn" id="12_grhal"]
+
+[sub_resource type="Resource" id="Resource_i48du"]
+script = ExtResource("6_lwdl8")
+item_data = ExtResource("5_5o2br")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ivedr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cstqm"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_38afy"]
+material = SubResource("StandardMaterial3D_cstqm")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_202fp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wrch6"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bogfs"]
+material = SubResource("StandardMaterial3D_wrch6")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uy8ni"]
+size = Vector3(1, 0.952315, 1)
 
 [node name="MainScene" type="Node3D"]
+script = ExtResource("1_b25ig")
 
 [node name="Player" parent="." instance=ExtResource("1_8etef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75288, 0.848955, -0.655252)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.68138, 0.848955, 0.00223708)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.754925, -0.38015, -0.534391, 0.542947, 0.819323, 0.18417, 0.367827, -0.429181, 0.824929, 0, 17.9553, 0)
@@ -19,8 +51,78 @@ transform = Transform3D(2.91023, 0, 0, 0, 5.51111, 0, 0, 0, 2.88643, 4, 0, 1)
 [node name="Roof" type="CSGBox3D" parent="RoomPrototype"]
 transform = Transform3D(13.1959, 0, 0, 0, 0.0128968, 0, 0, 0, 16.704, 0.503474, 0.931853, -0.693761)
 
+[node name="PickUp" parent="." instance=ExtResource("2_43tgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.478459, 0)
+lock_rotation = true
+slot_data = SubResource("Resource_i48du")
+
 [node name="Keypad" parent="." instance=ExtResource("3_grcd0")]
 transform = Transform3D(0.350038, 0, 0, 0, 0.323246, 0, 0, 0, 0.206972, 7.6105, 1.29003, 6.73341)
 
-[node name="key" parent="." instance=ExtResource("4_181if")]
-transform = Transform3D(0.00068463, 0, 0, 0, 0.000986229, 0, 0, 0, 0.000531494, 6, 0, -3)
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InventroyInterface" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_b0e5n")
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerInventory" parent="UI/InventroyInterface" instance=ExtResource("5_gwghl")]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 52.0
+offset_bottom = 50.0
+
+[node name="GrabbedSlot" parent="UI/InventroyInterface" instance=ExtResource("8_qixa7")]
+modulate = Color(1, 1, 1, 0.45098)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.999157, 0.0410284, 0.00109413, 0.001616, 0.0126889, 0.999918, 0.0410112, 0.999077, -0.0127444, 2.7975, 1.23025, -12.4506)
+mesh = SubResource("BoxMesh_ivedr")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.164807, 0.00763172, -0.00234724, -0.0016095, 0.0157566, 0.164238, 0.00782063, 0.164069, -0.0156637, 2.7975, 1.23025, -11.9449)
+mesh = SubResource("BoxMesh_ivedr")
+script = ExtResource("11_3v2bi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D2"]
+transform = Transform3D(22.4582, 0.000598872, 0.234522, -0.0402216, 0.473081, 4.98205, -0.109501, -0.0509419, 46.2695, -14.6611, -1.09873, 2.07758)
+mesh = SubResource("BoxMesh_38afy")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="MeshInstance3D2"]
+transform = Transform3D(1, -3.72529e-09, 1.86265e-09, -3.72529e-09, 1, 1.49012e-08, 4.65661e-10, 7.45058e-09, 1, 0, 0, 0)
+gravity_scale = 0.0
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D2/RigidBody3D"]
+transform = Transform3D(1, -3.72529e-09, 0, 3.72529e-09, 1, -1.49012e-08, -1.39698e-09, -7.45058e-09, 1, 0, 0, 0)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/RigidBody3D/Area3D"]
+shape = SubResource("BoxShape3D_202fp")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.24396, -0.0904254, -14.3167)
+mesh = SubResource("BoxMesh_bogfs")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.042301, 0)
+shape = SubResource("BoxShape3D_uy8ni")
+
+[node name="PickUpNote" parent="." instance=ExtResource("12_grhal")]
+transform = Transform3D(0.00202461, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00202461, 5.27103, 0.414886, -13.9241)
+gravity_scale = 0.0
+
+[connection signal="area_entered" from="MeshInstance3D2/RigidBody3D/Area3D" to="MeshInstance3D2" method="_on_area_3d_area_entered"]

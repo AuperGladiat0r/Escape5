@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bbc7rnjg575xh"]
+
+[ext_resource type="Script" path="res://inventory/item/item_data.gd" id="1_u2nhx"]
+[ext_resource type="Texture2D" uid="uid://cnyk0dyy4dpq7" path="res://3D models/Note/Note1.png" id="2_obxge"]
+
+[resource]
+script = ExtResource("1_u2nhx")
+name = "Note 1"
+description = "Tip from escape 2:
+ꓕ̥̊⃝ᴉ̥̊⃝𝑏̥̊⃝ƨ̥̊⃝ ɻ̥̊⃝ʁ̥̊⃝sa"
+texture = ExtResource("2_obxge")

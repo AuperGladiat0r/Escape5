@@ -1,8 +1,14 @@
-res://assets/simple_fpsplayer/Player.gd
-res://3D models/MainRoom/room_prototype.tscn
 res://MainScene.tscn
-res://assets/simple_fpsplayer/Player.tscn
-res://3D models/keypad/Keypa.tscn
+res://assets/simple_fpsplayer/Player.gd
+res://inventory/TestInv.tres
 res://3D models/key/key.tscn
-res://inventory.gd
-res://3D models/key/inventory.tscn
+res://inventory/item/pick_up.tscn
+res://assets/simple_fpsplayer/Player.tscn
+res://inventory/slot.tscn
+res://inventory/inventory.tscn
+res://3D models/MainRoom/room_prototype.tscn
+res://inventory/item/sketchfab_model.tscn
+res://inventory/inventory_data.gd
+res://assets/simple_fpsplayer/Player_manager.gd
+res://inventory/item/pick_up_note.tscn
+res://3D models/Note/Note1.tres

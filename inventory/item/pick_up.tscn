@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://pqxaeubbyd1f"]
+
+[ext_resource type="Script" path="res://inventory/item/pick_up.gd" id="1_ayiti"]
+[ext_resource type="PackedScene" uid="uid://cdbxt2sguhyss" path="res://inventory/item/sketchfab_model.tscn" id="1_jbopn"]
+[ext_resource type="Resource" uid="uid://cpxn5cqryvnkt" path="res://3D models/key/Key.tres" id="2_nl5qh"]
+[ext_resource type="Texture2D" uid="uid://055rkpuhdp48" path="res://3D models/key/key_0.png" id="3_6vkfa"]
+[ext_resource type="Script" path="res://inventory/slot_data.gd" id="3_8wrh8"]
+
+[sub_resource type="Resource" id="Resource_dcq15"]
+script = ExtResource("3_8wrh8")
+item_data = ExtResource("2_nl5qh")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r74ut"]
+radius = 0.204296
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5om44"]
+
+[node name="PickUp" type="RigidBody3D"]
+contact_monitor = true
+script = ExtResource("1_ayiti")
+slot_data = SubResource("Resource_dcq15")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.66678, 0.322252, -0.261761, 0.377685, -0.00627789, 0.925834, 0.642463, -0.330758, -0.272602, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_r74ut")
+
+[node name="Sketchfab_model" parent="." instance=ExtResource("1_jbopn")]
+transform = Transform3D(0.001, 0, 0, 0, -4.37114e-11, 0.001, 0, -0.001, -4.37114e-11, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+visible = false
+texture = ExtResource("3_6vkfa")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.908, 0, 0, 0, 1.908, 0, 0, 0, 1.908, 0, 0, 0)
+shape = SubResource("SphereShape3D_5om44")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

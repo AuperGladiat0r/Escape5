@@ -1,6 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsys3d3ay5d5b"]
+[gd_scene load_steps=4 format=3 uid="uid://bsys3d3ay5d5b"]
 
-[ext_resource type="PackedScene" uid="uid://chaqygks4ek1s" path="res://3D models/key/key.glb" id="1_3b508"]
+[ext_resource type="PackedScene" uid="uid://cdbxt2sguhyss" path="res://inventory/item/sketchfab_model.tscn" id="1_0syh0"]
+[ext_resource type="Script" path="res://3D models/key/key.gd" id="1_qro11"]
 
-[node name="key" instance=ExtResource("1_3b508")]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f008k"]
+radius = 29.3297
+height = 274.852
+
+[node name="key" type="Node3D"]
 transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
+script = ExtResource("1_qro11")
+
+[node name="Sketchfab_model" parent="." instance=ExtResource("1_0syh0")]
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(3.25904, 1.25823, 1.03211, -0.96561, -0.14144, 4.06315, 1.80997, -2.34103, 0.309243, 156.331, 19.1038, -257.143)
+shape = SubResource("CapsuleShape3D_f008k")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
