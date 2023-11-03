@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnv82oo1mqpgb"]
+
+[ext_resource type="Script" path="res://TicTacToe/TTT_Button.gd" id="1_aks3e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_th0vw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uxhtk"]
+
+[node name="TTT_Button" type="Node3D"]
+script = ExtResource("1_aks3e")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_th0vw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("BoxMesh_uxhtk")
+skeleton = NodePath("../..")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

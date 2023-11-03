@@ -1,8 +1,10 @@
+MeshInstance3D
 CollisionShape3D
 RigidBody3D
-MeshInstance3D
-Area3D
 Node3D
+OmniLight3D
+StaticBody3D
+Area3D
 Sprite3D
 CollisionPolygon3D
 RayCast3D
@@ -17,6 +19,5 @@ Area2D
 Button
 ScrollContainer
 CSGBox3D
-StaticBody3D
 DirectionalLight3D
 CSGCylinder3D

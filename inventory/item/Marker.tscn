@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b06jet31jbdkc"]
+
+[ext_resource type="Script" path="res://3D models/key/pick_up_key1.gd" id="1_saspp"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xvquy"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hv8rb"]
+
+[node name="Marker" type="RigidBody3D"]
+script = ExtResource("1_saspp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_xvquy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0763794, -0.285366, -0.00017736, -8.09763e-05, 0.00085071, -0.0978942, 0.0612332, 0.355953, 9.17736e-05, 0, 0, 0)
+mesh = SubResource("CylinderMesh_hv8rb")

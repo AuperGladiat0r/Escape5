@@ -1,8 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://bl6cyvuysewfo"]
+[gd_scene load_steps=24 format=3 uid="uid://bl6cyvuysewfo"]
 
 [ext_resource type="PackedScene" uid="uid://dgpjxoygnvyy4" path="res://assets/simple_fpsplayer/Player.tscn" id="1_8etef"]
 [ext_resource type="Script" path="res://MainScene.gd" id="1_b25ig"]
-[ext_resource type="PackedScene" uid="uid://pqxaeubbyd1f" path="res://inventory/item/pick_up.tscn" id="2_43tgc"]
+[ext_resource type="PackedScene" uid="uid://pqxaeubbyd1f" path="res://inventory/item/Key1.tscn" id="2_43tgc"]
 [ext_resource type="PackedScene" uid="uid://b0aavylmm8lkm" path="res://3D models/MainRoom/room_prototype.tscn" id="2_ca1er"]
 [ext_resource type="PackedScene" uid="uid://b7e2qyits6cm7" path="res://3D models/keypad/Keypa.tscn" id="3_grcd0"]
 [ext_resource type="Resource" uid="uid://cpxn5cqryvnkt" path="res://3D models/key/Key.tres" id="5_5o2br"]
@@ -11,7 +11,9 @@
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="6_lwdl8"]
 [ext_resource type="PackedScene" uid="uid://b7t254g1xu2ab" path="res://inventory/slot.tscn" id="8_qixa7"]
 [ext_resource type="Script" path="res://door.gd" id="11_3v2bi"]
-[ext_resource type="PackedScene" uid="uid://cfdwjqnf3or0h" path="res://inventory/item/pick_up_note.tscn" id="12_grhal"]
+[ext_resource type="PackedScene" uid="uid://cfdwjqnf3or0h" path="res://inventory/item/Note1.tscn" id="12_grhal"]
+[ext_resource type="Script" path="res://3D models/Note/pick_up_note1.gd" id="13_hqk42"]
+[ext_resource type="Resource" uid="uid://bbc7rnjg575xh" path="res://3D models/Note/Note1.tres" id="14_ripmv"]
 
 [sub_resource type="Resource" id="Resource_i48du"]
 script = ExtResource("6_lwdl8")
@@ -33,6 +35,10 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_bogfs"]
 material = SubResource("StandardMaterial3D_wrch6")
 
+[sub_resource type="Resource" id="Resource_rt0hr"]
+script = ExtResource("6_lwdl8")
+item_data = ExtResource("14_ripmv")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_uy8ni"]
 size = Vector3(1, 0.952315, 1)
 
@@ -51,7 +57,7 @@ transform = Transform3D(2.91023, 0, 0, 0, 5.51111, 0, 0, 0, 2.88643, 4, 0, 1)
 [node name="Roof" type="CSGBox3D" parent="RoomPrototype"]
 transform = Transform3D(13.1959, 0, 0, 0, 0.0128968, 0, 0, 0, 16.704, 0.503474, 0.931853, -0.693761)
 
-[node name="PickUp" parent="." instance=ExtResource("2_43tgc")]
+[node name="Key1" parent="." groups=["Key1"] instance=ExtResource("2_43tgc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.478459, 0)
 lock_rotation = true
 slot_data = SubResource("Resource_i48du")
@@ -117,12 +123,14 @@ mesh = SubResource("BoxMesh_bogfs")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="MeshInstance3D3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.042301, 0)
-shape = SubResource("BoxShape3D_uy8ni")
-
-[node name="PickUpNote" parent="." instance=ExtResource("12_grhal")]
-transform = Transform3D(0.00202461, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00202461, 5.27103, 0.414886, -13.9241)
+[node name="Note1" parent="." groups=["Note1"] instance=ExtResource("12_grhal")]
+transform = Transform3D(0.00202461, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00202461, 5.27103, 0.414886, -7.21479)
 gravity_scale = 0.0
+script = ExtResource("13_hqk42")
+slot_data = SubResource("Resource_rt0hr")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Note1"]
+transform = Transform3D(0.00202461, 0, 0.999998, 0, 1, 0, -0.999998, 0, 0.00202461, -0.392654, -0.46301, 0.0262761)
+shape = SubResource("BoxShape3D_uy8ni")
 
 [connection signal="area_entered" from="MeshInstance3D2/RigidBody3D/Area3D" to="MeshInstance3D2" method="_on_area_3d_area_entered"]

@@ -1,63 +1,67 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1698074009
-door.gd::GDScript::-1::1698068889::0::1::::<>MeshInstance3D<>::
-icon.svg::CompressedTexture2D::280057812453260342::1697748200::1697748200::1::::<><>::
-MainScene.gd::GDScript::-1::1698001118::0::1::::<>Node3D<>::
-MainScene.tscn::PackedScene::3222659102127689168::1698074009::0::1::::<><>::uid://dgpjxoygnvyy4::::res://assets/simple_fpsplayer/Player.tscn<>res://MainScene.gd<>uid://pqxaeubbyd1f::::res://inventory/item/pick_up.tscn<>uid://b0aavylmm8lkm::::res://3D models/MainRoom/room_prototype.tscn<>uid://b7e2qyits6cm7::::res://3D models/keypad/Keypa.tscn<>uid://cpxn5cqryvnkt::::res://3D models/key/Key.tres<>uid://d108xt76uvefx::::res://inventory/inventory.tscn<>res://inventory/Inventory_Interface.gd<>res://inventory/slot_data.gd<>uid://b7t254g1xu2ab::::res://inventory/slot.tscn<>res://door.gd<>uid://cfdwjqnf3or0h::::res://inventory/item/pick_up_note.tscn
-::res://3D models/::1698066965
-::res://3D models/hammer/::1697748200
-hammer.glb::PackedScene::7128526621309205935::1697748200::1697748200::1::::<><>::
-hammer_bake1024_color.png::CompressedTexture2D::1114979382406750651::1697748200::1697748200::1::::<><>::
-hammer_bake1024_normal.png::CompressedTexture2D::6349396008817502623::1697748200::1697748200::1::::<><>::
-hammer_bake1024_orm.png::CompressedTexture2D::6706519918923948211::1697748200::1697748200::1::::<><>::
-::res://3D models/key/::1698074010
-key.gd::GDScript::-1::1698068556::0::1::::<>Node3D<>::
-key.glb::PackedScene::5265177935235315806::1697914382::1697914420::1::::<><>::uid://055rkpuhdp48
-Key.tres::Resource/Resource::5873997735592059619::1697995224::0::1::::<><>::res://inventory/item/item_data.gd<>uid://055rkpuhdp48
-key.tscn::PackedScene::3700508044232081785::1698074010::0::1::::<><>::uid://cdbxt2sguhyss::::res://inventory/item/sketchfab_model.tscn<>res://3D models/key/key.gd
-key_0.png::CompressedTexture2D::1818504841175746815::1697914417::1697914421::1::::<><>::
-::res://3D models/keypad/::1697912420
-Keypa.tscn::PackedScene::4642390396440936376::1697912420::0::1::::<><>::uid://b86r4goc5c1a0
-scene.gltf::PackedScene::4767732547922726961::1697908771::1697908838::1::::<><>::uid://bwerujeqk43tl
-::res://3D models/keypad/textures/::1697908840
-Button_baseColor.jpeg::CompressedTexture2D::3939901139132052361::1697908771::1697908839::1::::<><>::
-Button_metallicRoughness.png::CompressedTexture2D::4483492963806666457::1697908771::1697908840::1::::<><>::
-Button_normal.png::CompressedTexture2D::4155862187626465191::1697908771::1697908839::1::::<><>::
-Panel_baseColor.jpeg::CompressedTexture2D::7152086503126488614::1697908771::1697908839::1::::<><>::
-Panel_emissive.jpeg::CompressedTexture2D::8869045394152067803::1697908771::1697908839::1::::<><>::
-Panel_metallicRoughness.png::CompressedTexture2D::3942878596484309271::1697908771::1697908840::1::::<><>::
-Panel_normal.png::CompressedTexture2D::96892780294961984::1697908772::1697908839::1::::<><>::
-::res://3D models/MainRoom/::1698074010
-RoomPrototype.glb::PackedScene::9127904838559202795::1697908352::1697908551::1::::<><>::
-room_prototype.tscn::PackedScene::4141180554431736724::1698074010::0::1::::<><>::
-::res://3D models/Note/::1697995225
-folded_wrinkled_paper.glb::PackedScene::5713407648638342884::1697993607::1697993661::1::::<><>::uid://cklrpeix6dc61
-folded_wrinkled_paper_0.png::CompressedTexture2D::5498497158385185192::1697993658::1697993661::1::::<><>::
-folded_wrinkled_paper_1.png::CompressedTexture2D::8412674225852447590::1697993659::1697993661::1::::<><>::
-folded_wrinkled_paper_2.png::CompressedTexture2D::593694684597422069::1697993660::1697993661::1::::<><>::
-Note1.png::CompressedTexture2D::5735493411328040932::1697993507::1698074101::1::::<><>::
-Note1.tres::Resource/Resource::2462712282124950509::1697995225::0::1::::<><>::res://inventory/item/item_data.gd<>uid://cnyk0dyy4dpq7
-::res://assets/::1698027338
-pngimg.com - dot_PNG40.png::CompressedTexture2D::8602219238233654642::1698027295::1698027338::1::::<><>::
-::res://assets/simple_fpsplayer/::1698074010
-Player.gd::GDScript::-1::1698072706::0::1::::<>CharacterBody3D<>::
-Player.tscn::PackedScene::7611949078106151781::1698074010::0::1::::<><>::res://assets/simple_fpsplayer/Player.gd<>uid://leiq60yociyf::::res://inventory/TestInv.tres<>uid://dus8j86qu0tvu::::res://assets/pngimg.com - dot_PNG40.png<>uid://bsys3d3ay5d5b::::res://3D models/key/key.tscn
-Player_manager.gd::GDScript::-1::1698073423::0::1::::<>Node<>::
-README.md::TextFile::-1::1697900232::0::1::::<><>::
-simplefps-icon.png::CompressedTexture2D::4655847465857238927::1697900233::1697925548::1::::<><>::
-::res://inventory/::1698074010
-inventory.gd::GDScript::-1::1698004571::0::1::::<>PanelContainer<>::
-inventory.tscn::PackedScene::9037827212354194585::1698074010::0::1::::<><>::res://inventory/inventory.gd
-inventory_data.gd::GDScript::-1::1698072814::0::1::::InventoryData<>Resource<>::
-Inventory_Interface.gd::GDScript::-1::1698069391::0::1::::<>Control<>::
-pick_up.gd::GDScript::-1::1698032660::0::1::::<>Node2D<>::
-slot.gd::GDScript::-1::1698002497::0::1::::<>PanelContainer<>::
-slot.tscn::PackedScene::4673381323717969213::1698074010::0::1::::<><>::res://inventory/slot.gd
-slot_data.gd::GDScript::-1::1697992629::0::1::::SlotData<>Resource<>::
-TestInv.tres::Resource/InventoryData::780850767632417797::1698073511::0::1::::<><>::res://inventory/inventory_data.gd
-::res://inventory/item/::1698074010
-item_data.gd::GDScript::-1::1697995224::0::1::::ItemData<>Resource<>::
-pick_up.gd::GDScript::-1::1698063696::0::1::::<>RigidBody3D<>::
-pick_up.tscn::PackedScene::1087259430506279157::1698074010::0::1::::<><>::res://inventory/item/pick_up.gd<>uid://cdbxt2sguhyss::::res://inventory/item/sketchfab_model.tscn<>uid://055rkpuhdp48::::res://3D models/key/key_0.png
-pick_up_note.tscn::PackedScene::5131331425545774637::1698074010::0::1::::<><>::res://inventory/item/pick_up.gd<>uid://cnnu8vs3x0h5u::::res://3D models/Note/folded_wrinkled_paper.glb<>uid://055rkpuhdp48::::res://3D models/key/key_0.png
-sketchfab_model.tscn::PackedScene::4986904143208756878::1698074010::0::1::::<><>::uid://055rkpuhdp48::::res://3D models/key/key_0.png
+::res://::1698861828
+door.gd::GDScript::-1::1698183769::0::1::::<>MeshInstance3D<>::
+icon.svg::CompressedTexture2D::280057812453260342::1697989301::1697989301::1::::<><>::
+MainScene.gd::GDScript::-1::1698183769::0::1::::<>Node3D<>::
+MainScene.tscn::PackedScene::3222659102127689168::1698185031::0::1::::<><>::uid://dgpjxoygnvyy4::::res://assets/simple_fpsplayer/Player.tscn<>res://MainScene.gd<>uid://pqxaeubbyd1f::::res://inventory/item/pick_up.tscn<>uid://b0aavylmm8lkm::::res://3D models/MainRoom/room_prototype.tscn<>uid://b7e2qyits6cm7::::res://3D models/keypad/Keypa.tscn<>uid://cpxn5cqryvnkt::::res://3D models/key/Key.tres<>uid://d108xt76uvefx::::res://inventory/inventory.tscn<>res://inventory/Inventory_Interface.gd<>res://inventory/slot_data.gd<>uid://b7t254g1xu2ab::::res://inventory/slot.tscn<>res://door.gd<>uid://cfdwjqnf3or0h::::res://inventory/item/pick_up_note.tscn
+::res://3D models/::1698183769
+::res://3D models/hammer/::1697989301
+hammer.glb::PackedScene::7128526621309205935::1697989301::1697989301::1::::<><>::
+hammer_bake1024_color.png::CompressedTexture2D::1114979382406750651::1697989301::1697989301::1::::<><>::
+hammer_bake1024_normal.png::CompressedTexture2D::6349396008817502623::1697989301::1697989301::1::::<><>::
+hammer_bake1024_orm.png::CompressedTexture2D::6706519918923948211::1697989301::1697989301::1::::<><>::
+::res://3D models/key/::1698861877
+key.gd::GDScript::-1::1698183769::0::1::::<>Node3D<>::
+key.glb::PackedScene::5265177935235315806::1697989301::1697989301::1::::<><>::
+Key.tres::Resource/Resource::5873997735592059619::1698183769::0::1::::<><>::res://inventory/item/item_data.gd<>uid://055rkpuhdp48
+key.tscn::PackedScene::3700508044232081785::1698861877::0::1::::<><>::uid://cdbxt2sguhyss::::res://inventory/item/sketchfab_model.tscn<>res://3D models/key/key.gd
+key_0.png::CompressedTexture2D::1818504841175746815::1697989301::1697989301::1::::<><>::
+pick_up_key1.gd::GDScript::-1::1698861828::0::1::::<>RigidBody3D<>::
+::res://3D models/keypad/::1697989301
+Keypa.tscn::PackedScene::4642390396440936376::1697989301::0::1::::<><>::uid://b86r4goc5c1a0
+scene.gltf::PackedScene::4767732547922726961::1697989301::1697989301::1::::<><>::
+::res://3D models/keypad/textures/::1697989301
+Button_baseColor.jpeg::CompressedTexture2D::3939901139132052361::1697989301::1697989301::1::::<><>::
+Button_metallicRoughness.png::CompressedTexture2D::4483492963806666457::1697989301::1697989301::1::::<><>::
+Button_normal.png::CompressedTexture2D::4155862187626465191::1697989301::1697989301::1::::<><>::
+Panel_baseColor.jpeg::CompressedTexture2D::7152086503126488614::1697989301::1697989301::1::::<><>::
+Panel_emissive.jpeg::CompressedTexture2D::8869045394152067803::1697989301::1697989301::1::::<><>::
+Panel_metallicRoughness.png::CompressedTexture2D::3942878596484309271::1697989301::1697989301::1::::<><>::
+Panel_normal.png::CompressedTexture2D::96892780294961984::1697989301::1697989301::1::::<><>::
+::res://3D models/MainRoom/::1698861878
+RoomPrototype.glb::PackedScene::9127904838559202795::1697989301::1697989301::1::::<><>::
+room_prototype.tscn::PackedScene::4141180554431736724::1698861878::0::1::::<><>::
+::res://3D models/Note/::1698861828
+folded_wrinkled_paper.glb::PackedScene::5713407648638342884::1698183769::1698183769::1::::<><>::
+folded_wrinkled_paper_0.png::CompressedTexture2D::5498497158385185192::1698183769::1698183769::1::::<><>::
+folded_wrinkled_paper_1.png::CompressedTexture2D::8412674225852447590::1698183769::1698183769::1::::<><>::
+folded_wrinkled_paper_2.png::CompressedTexture2D::593694684597422069::1698183769::1698183769::1::::<><>::
+Note1.png::CompressedTexture2D::5735493411328040932::1698183769::1698183769::1::::<><>::
+Note1.tres::Resource/Resource::2462712282124950509::1698183769::0::1::::<><>::res://inventory/item/item_data.gd<>uid://cnyk0dyy4dpq7
+pick_up_note1.gd::GDScript::-1::1698861828::0::1::::<>RigidBody3D<>::
+::res://assets/::1698183769
+pngimg.com - dot_PNG40.png::CompressedTexture2D::8602219238233654642::1698183769::1698183769::1::::<><>::
+::res://assets/simple_fpsplayer/::1698861878
+Player.gd::GDScript::-1::1698861877::0::1::::<>CharacterBody3D<>::
+Player.tscn::PackedScene::7611949078106151781::1698861878::0::1::::<><>::res://assets/simple_fpsplayer/Player.gd<>uid://leiq60yociyf::::res://inventory/TestInv.tres<>uid://dus8j86qu0tvu::::res://assets/pngimg.com - dot_PNG40.png
+Player_manager.gd::GDScript::-1::1698861828::0::1::::<>Node<>::
+README.md::TextFile::-1::1697989301::0::1::::<><>::
+simplefps-icon.png::CompressedTexture2D::4655847465857238927::1697989301::1697989301::1::::<><>::
+::res://inventory/::1698861878
+inventory.gd::GDScript::-1::1698183769::0::1::::<>PanelContainer<>::
+inventory.tscn::PackedScene::9037827212354194585::1698861878::0::1::::<><>::res://inventory/inventory.gd
+inventory_data.gd::GDScript::-1::1698183769::0::1::::InventoryData<>Resource<>::
+Inventory_Interface.gd::GDScript::-1::1698183769::0::1::::<>Control<>::
+pick_up.gd::GDScript::-1::1698183769::0::1::::<>Node2D<>::
+slot.gd::GDScript::-1::1698183769::0::1::::<>PanelContainer<>::
+slot.tscn::PackedScene::4673381323717969213::1698861878::0::1::::<><>::res://inventory/slot.gd
+slot_data.gd::GDScript::-1::1698183769::0::1::::SlotData<>Resource<>::
+TestInv.tres::Resource/InventoryData::780850767632417797::1698861877::0::1::::<><>::res://inventory/inventory_data.gd
+::res://inventory/item/::1698861878
+ItemManager.gd::GDScript::-1::1698861828::0::1::::<>Node<>::
+item_data.gd::GDScript::-1::1698183769::0::1::::ItemData<>Resource<>::
+Key1.tscn::PackedScene::-1::1698861828::0::1::::<><>::
+Note1.tscn::PackedScene::-1::1698861828::0::1::::<><>::
+pick_up_note.tscn::PackedScene::5630158636838955504::1698861877::0::1::::<><>::res://inventory/item/pick_up.gd<>uid://bbc7rnjg575xh::::res://3D models/Note/Note1.tres<>uid://cnnu8vs3x0h5u::::res://3D models/Note/folded_wrinkled_paper.glb<>res://inventory/slot_data.gd<>uid://cnyk0dyy4dpq7::::res://3D models/Note/Note1.png
+pick_up.tscn::PackedScene::8117613346450340542::1698861877::0::1::::<><>::res://inventory/item/pick_up.gd<>uid://cdbxt2sguhyss::::res://inventory/item/sketchfab_model.tscn<>uid://cpxn5cqryvnkt::::res://3D models/key/Key.tres<>uid://055rkpuhdp48::::res://3D models/key/key_0.png<>res://inventory/slot_data.gd
+sketchfab_model.tscn::PackedScene::4986904143208756878::1698861878::0::1::::<><>::uid://055rkpuhdp48::::res://3D models/key/key_0.png

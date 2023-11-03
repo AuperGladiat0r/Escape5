@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://uhur7gau2skp"]
+
+[ext_resource type="PackedScene" uid="uid://dgpjxoygnvyy4" path="res://assets/simple_fpsplayer/Player.tscn" id="1_audaj"]
+[ext_resource type="Script" path="res://TicTacToe/TTT.gd" id="2_8jhbc"]
+[ext_resource type="PackedScene" uid="uid://bnv82oo1mqpgb" path="res://TicTacToe/TTT_Button.tscn" id="2_jp6yl"]
+[ext_resource type="Script" path="res://inventory/Inventory_Interface.gd" id="4_cfy6i"]
+[ext_resource type="PackedScene" uid="uid://d108xt76uvefx" path="res://inventory/inventory.tscn" id="5_vkea2"]
+[ext_resource type="PackedScene" uid="uid://b7t254g1xu2ab" path="res://inventory/slot.tscn" id="6_tchae"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eyen4"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ca6w6"]
+
+[node name="TTTTest" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_audaj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.000668764, 0.994823, -0.0162783)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(17.6251, 0, 0, 0, 1, 0, 0, 0, 17.6251, 0, -0.495819, 0)
+shape = SubResource("BoxShape3D_eyen4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(8.81772, 0, 0, 0, 1, 0, 0, 0, 8.81772, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ca6w6")
+skeleton = NodePath("../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.88216, 0)
+omni_range = 15.767
+
+[node name="TTT" type="Node3D" parent="." node_paths=PackedStringArray("TSlot")]
+script = ExtResource("2_8jhbc")
+TSlot = [NodePath("TTT_Button"), NodePath("TTT_Button2"), NodePath("TTT_Button3"), NodePath("TTT_Button4"), NodePath("TTT_Button5"), NodePath("TTT_Button6"), NodePath("TTT_Button7"), NodePath("TTT_Button8"), NodePath("TTT_Button9")]
+
+[node name="TTT_Button" parent="TTT" instance=ExtResource("2_jp6yl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 2.937, 5.22736)
+
+[node name="TTT_Button2" parent="TTT" instance=ExtResource("2_jp6yl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.937, 5.22736)
+
+[node name="TTT_Button3" parent="TTT" instance=ExtResource("2_jp6yl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 2.937, 5.22736)
+
+[node name="TTT_Button4" parent="TTT" instance=ExtResource("2_jp6yl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 1.83667, 5.22736)
+
+[node name="TTT_Button5" parent="TTT" instance=ExtResource("2_jp6yl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.83667, 5.22736)
+
+[node name="TTT_Button6" parent="TTT" instance=ExtResource("2_jp6yl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 1.83667, 5.22736)
+
+[node name="TTT_Button7" parent="TTT" instance=ExtResource("2_jp6yl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0.737, 5.22736)
+
+[node name="TTT_Button8" parent="TTT" instance=ExtResource("2_jp6yl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.737, 5.22736)
+
+[node name="TTT_Button9" parent="TTT" instance=ExtResource("2_jp6yl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0.737, 5.22736)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InventroyInterface" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_cfy6i")
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerInventory" parent="UI/InventroyInterface" instance=ExtResource("5_vkea2")]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 52.0
+offset_bottom = 50.0
+
+[node name="GrabbedSlot" parent="UI/InventroyInterface" instance=ExtResource("6_tchae")]
+modulate = Color(1, 1, 1, 0.45098)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
